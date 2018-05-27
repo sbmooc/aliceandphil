@@ -3,15 +3,115 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5% 5%
+  padding: 5% 5%;
+  position: relative;
+  padding-bottom: 15vh;
+
+
+    font-family: 'Ubuntu', sans-serif;
+
 
 }
 
 .invite{
 max-height: 70vh;
-padding: 5%
+margin-bottom: 5vh
 }
 
 h1{
   text-align: center
+}
+
+#navBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#navBar a {
+  /* max-width: 23%; */
+
+}
+
+#photoInvite{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3%
+}
+
+#photo{
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 40%;
+
+}
+
+#navBar img {
+  max-height: 80px
+}
+
+#sections {
+  text-align: left
+}
+
+#flights{
+  max-width: 20%
+}
+
+@media(min-width: 600px){
+  #sections p {
+
+    max-width: 65%;
+
+  }
+
+}
+
+#sections p {
+line-height: 2em;
+padding-left: 2%
+}
+
+#sections h4 {
+  padding-left: 2%
+}
+
+.sectionTitle {
+  max-width: 40%;
+  min-width: 300px
+}
+
+.border {
+  bottom: 0;
+  right: 0;
+  transform: rotate(-90deg);
+  position: absolute;
+  min-width: 30%;
+  max-width: 50%
+}
+
+.border-mob {
+  max-width: 80%;
+  display: none
+}
+
+@media(max-width: 600px){
+  .border {
+
+    display: none;
+
+  }
+
+  .border-mob {
+    display: inline;
+  }
+
+  body {
+      padding-bottom: 5vh
+  }
+
 }
