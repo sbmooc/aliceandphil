@@ -1,68 +1,342 @@
-<!DOCTYPE html> <html lang="en" dir="ltr"> <head> <meta charset="utf-8"> <meta
-  name="viewport" content="width=device-width, initial-scale=1.0"> <title>Phil and
-    Alice are getting married!</title> <link rel="stylesheet"
-    href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
-    integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
-    crossorigin="anonymous"> <link rel="stylesheet" href="stylesheet.css"> <link
-    href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<meta charset="utf-8"></meta>
 
-  </head> <body> <div id="navBar"> <a href="#accomo" class = "nav-button"> <img
-    src="accomo.png" class="pure-img"> </a> <a href="#flights" class =
-    "nav-button"> <img src="flights.png" class="pure-img"> </a> <a
-    href="#localArea" class = "nav-button"> <img src="localArea.png"
-    class="pure-img"> </a>
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+</meta>
 
-  </div> <div id="photoInvite"> <img class="pure-img invite" src="invite.jpg"
-    alt="Save the date for Phil and Alice's wedding 25/05/19 - Costa Brava">
-    <img class="pure-img" id="photo" src="aliceandphil.jpg" alt="Photo of Phil
-    and Alice together"> </div> <div id="sections">
+<title>Phil and Alice are getting married!</title>
 
-      <img src="accomo.png" class="pure-img sectionTitle" id="accomo"> <p> If you
-        are looking at staying for 1-2 nights, we recommend staying close to the
-        wedding venue. We have a wedding discount of 35% and have reserved some
-        rooms at the venue for the night of the wedding in the castle and tower.
-      </p> <p> A double room in the tower is £100.28 (inc breakfast). A bigger
-        room for 3 people (a double and a single bed) in the castle is £163.41 (inc
-        breakfast). If you would like to take one of these rooms, please let us know
-        ASAP. There are also villas, apartments and hotels available for short stays
-        in the local town of La Bisbal or in the nearby villages of Monells, Púbol,
-        Peratallada. </p> <p> If you are thinking of coming for a long weekend or
-          more, we recommend that you stay on the coast and travel inland for the
-          wedding celebrations. Bookings for private villas will likely open in the
-          autumn. </p> <p> We will be staying close to Sa Riera and can recommend
-            accommodation both there and in Begur, Sa Tuna, Tamariu and Calella de
-            Palafrugell. Over the course of the weekend, we plan to arrange a few other
-            events in these areas. More details to follow on that. </p> <p> Vicky
-              (Alice’s mum) has worked in the area for many years and is keen to help with
-              your accommodation search in any way she can. Think of her as your personal
-              travel agent ☺ <a href='mailto: victoria@spanishescape.co.uk'>
-                victoria@spanishescape.co.uk</a>`` </p> <img src="flights.png" id="flights"
-                class="pure-img sectionTitle"> <p> When deciding when to travel, please bear
-                  in mind that it is not only the long bank holiday weekend, but also the
-                  first weekend of May half term. If possible, avoid peak flights by flying
-                  Friday-Tuesday, for example. Secondly, the wedding will begin late on
-                  Saturday afternoon (approx. 4pm) so you have the option to fly early on
-                  Saturday morning, should that be more convenient.  </p> <p> There are two
-                    options of airports: </p> <h4> Girona (GRO) </h4> <p> Approximately a 40
-                      minute drive from where you are likely to stay Flights to Girona for May
-                      2019 will only be released in October 2018, although Jet2 already have some
-                      avaliable. </p> <p>Airlines:</p> <ul> <li>Ryanair <li>Tui <li>Jet2.com </ul>
-                      </p> <h4> Barcelona El Prat (BCN) </h4>
+<link
+  href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+  rel="stylesheet"
+  integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+  crossorigin="anonymous">
+</link>
 
-                      <p> Approximately a 2 hour drive from where you are likely to stay Flights to
-                        Barcelona are already on sale and are currently quite reasonable. They will
-                        only go up in price, so book ASAP. </p> <p>Airlines:</p> <ul> <li>Easyjet
-                          <li>British Airways <li>Vueling </ul> </p> <p> And so on… When the flights are
-                            first released, they are likely to be at their cheapest, so we encourage you
-                            to book promptly. </p>
+<link
+  href="stylesheet.css"
+  rel="stylesheet">
+</link>
 
-                            <img src="localArea.png" id="localArea" class="pure-img sectionTitle">
-                            <p>
-                              Coming soon...
-                            </p>
-                          
+<link
+  href="https://fonts.googleapis.com/css?family=Ubuntu"
+  rel="stylesheet">
+</link>
+<script>
+  function add_guest() {
+    var new_form = document.createElement('form');
+    new_form.innerHTML = '<input name="name" type="text" value placeholder="Guest Name" required/> <input name="dietary" type="text" value placeholder="Dietary Requirements"/> <input name="attending" type="radio" value="yes" required/> I\'m coming - can\'t wait! <br/> <input name="attending" type="radio" value="no" required/> Sorry to miss it'
+    new_form.className="pure-form pure-form-stacked"
+    document.getElementById('wrapper').appendChild(new_form);
+}
 
-                          </div> <img src="corner.png" class="pure-img border"> <img
-                          src="corner-mob.png" class="pure-img border-mob">
+function remove_guest() {
+  console.log('here')
+    var last = document.getElementById('wrapper')
+    last.removeChild(last.children[last.children.length -1])
+}
 
-                        </body> </html>
+function submit_data() {
+		document.getElementById('required_ting').style.display = 'none'
+		check_form_validation()
+    var element = document.getElementById("wrapper");
+    const url = 'https://script.google.com/macros/s/AKfycbw6fKPF4MtEjSmtgUNWrFyHEZdSnWaDvEGYY_GH1tMmCQz7kb4/exec'
+
+    var utc = new Date().toJSON().slice(0, 19);
+
+    for (i = 0; i < element.children.length; i++) {
+        form = element.children[i]
+        var xhr = new XMLHttpRequest();
+        var name = encodeURI(form.elements.name.value)
+        var dietary = encodeURI(form.elements.dietary.value)
+        var attending = encodeURI(form.elements.attending.value)
+        if (name) {
+            var params = '?name=' + name + '&attending=' + attending + '&timestamp=' + utc
+            if (dietary) {
+                params += '&dietary=' + dietary
+            } else {
+                params += '&dietary=N/A'
+            }
+            var sub_url = url + params
+            xhr.open("GET", sub_url, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('whole_form').style.display = "none"
+                    document.getElementById('thanks').style.display = "block"
+                } else if (xhr.status != 200) {
+                		document.getElementById('whole_form').style.display = "none"
+                    document.getElementById('whoops').style.display = "block"
+                }
+            };
+            xhr.send('');
+
+}
+    }
+}
+
+function check_form_validation() {
+var frm = document.forms['invite_form']
+for (i=0; i<frm.elements.length; i++){
+if (frm.elements[i].required && frm.elements[i].value == ""){
+document.getElementById('required_ting').style.visibility = 'show'
+}
+}
+}
+  </script>
+
+
+  <img
+    id="stuck_photo"
+    alt="Wedding Invitation"
+    src="invite_3a.png"/>
+
+
+<div id="navBar">
+  <a
+    class="nav-button"
+    href="#accomo">
+    <img
+      class="pure-img"
+      src="accomo.png"/>
+  </a>
+
+  <a
+    class="nav-button"
+    href="#flights">
+    <img
+      class="pure-img"
+      src="flights.png"/>
+  </a>
+
+  <a
+    class="nav-button"
+    href="#localArea">
+    <img
+      class="pure-img"
+      src="localArea.png"/>
+  </a>
+
+  <a
+    class="nav-button"
+    href="#rsvp">
+    <img
+      class="pure-img"
+      src="rsvp.png"/>
+  </a>
+</div>
+
+<div id="photoInvite">
+  <img
+    class="pure-img invite"
+    alt="Wedding Invitation"
+    src="invite_3b.png"/>
+
+
+</div>
+
+<div id="sections">
+
+  <img
+    id="accomo"
+    class="pure-img sectionTitle"
+    src="accomo.png"/>
+  <p>
+    If you are looking at staying for 1-2 nights, we recommend staying close to the     wedding
+    venue. We have a wedding discount of 35% and have reserved some rooms at the     venue for the
+    night of the wedding in the castle and tower.
+  </p>
+
+  <p>
+    A double room in the tower is £100.28 (inc breakfast). A bigger room for 3 people (a     double
+    and a single bed) in the castle is £163.41 (inc breakfast). If you would like to     take one of
+    these rooms, please let us know ASAP. There are also villas, apartments and     hotels available
+    for short stays in the local town of La Bisbal or in the nearby     villages of Monells, Púbol,
+    Peratallada.
+  </p>
+
+  <p>
+    If you are thinking of coming for a long weekend or more, we recommend that you stay     on the
+    coast and travel inland for t for all guestshe wedding celebrations. Bookings for private     villas will
+    likely open in the autumn.
+  </p>
+
+  <p>
+    We will be staying close to Sa Riera and can recommend accommodation both there and     in
+    Begur, Sa Tuna, Tamariu and Calella de Palafrugell. Over the course of the     weekend, we plan
+    to arrange a few other events in these areas. More details to     follow on that.
+  </p>
+
+  <p>
+    Vicky (Alice’s mum) has worked in the area for many years and is keen to help with your
+    accommodation search in any way she can. Think of her as your personal travel agent ☺
+    <a href="mailto: victoria@spanishescape.co.uk">victoria@spanishescape.co.uk</a>
+
+
+  </p>
+
+  <img
+    id="flights"
+    class="pure-img sectionTitle"
+    src="flights.png"/>
+  <p>
+    When deciding when to travel, please bear in mind that it is not only the long     bank holiday
+    weekend, but also the first weekend of May half term. If     possible, avoid peak flights by
+    flying Friday-Tuesday, for example. Secondly,     the wedding will begin late on Saturday
+    afternoon (approx. 4pm) so you have     the option to fly early on  Saturday morning, should
+    that be more convenient.
+  </p>
+    <p>There are two options of airports:</p>
+
+  <h4>Girona (GRO)</h4>
+
+  <p>
+    Approximately a 40 minute drive from where you are likely to stay Flights     to Girona for May
+    2019 will only be released in October 2018, although     Jet2 already have some avaliable.
+  </p>
+
+  <p>Airlines:</p>
+
+  <ul><li>Ryanair</li><li>Tui</li><li>Jet2.com</li></ul>
+
+  <p></p>
+
+  <h4>Barcelona El Prat (BCN)</h4>
+
+  <p>
+    Approximately a 2 hour drive from where you are likely to stay Flights to     Barcelona are
+    already on sale and are currently quite reasonable. They will     only go up in price, so book
+    ASAP.
+  </p>
+
+  <p>Airlines:</p>
+  <ul><li>Easyjet</li><li>British Airways</li><li>Vueling</li></ul>
+
+  <p></p>
+
+  <p>
+    And so on… When the flights are first released, they are likely to     be at their cheapest, so
+    we encourage you to book promptly.
+  </p>
+
+  <img
+    id="localArea"
+    class="pure-img sectionTitle"
+    src="localArea.png"/>
+  <p>We’ve given a few tips on places to see and things to do around the area while you’re there.</p>
+
+<h4>Best beaches</h4>
+<p>There are a huge number and variety of beaches in the area, here are our top picks:</p>
+<ul><li>Calella De Palafrugell (Alice’s favourite in the world)</li>
+<li>Sa Riera (A classic Costa Bravan cove close to Begur)</li>
+<li>Llafranc (Good for a seafront lunch)</li>
+<li>Playa del Castel (A really beachy beach for beach lovers)</li></ul>
+
+<h4>Towns:</h4>
+<ul><li>Begur (A wonderful town sat on the top of the hills straight up from the coast. A crumbling medieval castle overlooks a cosy town of squares for drinking and eating, Cuban inspired architecture and winding alleys of restaurants and shops)</li>
+<li>Pals Old Town (An excellently maintained medieval town – for a low-key afternoon stroll)</li>
+<li>Girona (An attractive city of pebble streets, with some excellent restaurants and ice cream shops and a filming location for a load of Game of Thrones (apparently)</li>
+<li>Peratallada (Alice hasn’t ever even suggested that I go there, so I can’t give you any insight, but the pictures look nice and apparently the bridesmaids really like this little Catalonian village with great value lunch menus…and pottery)</li></ul>
+
+<h4>Other Activities</h4>
+<p>Walk up the hill at Torroella De MontPgri (Affectionately known as the Bishop, because of its resemblance to a Bishop on his back, sticking up from the flat fields – there is a fort sat on top of this 300metre high hill. It’s a nice steep walk, with some nice views over the plains (where it mostly rains in Spain) and is a decent way to burn off some paella. The website link says that the round walk from the town, up and down the Bishop should take about 4 hours, I think that’s probably ambling pace, but gives you an idea - https://www.outdooractive.com/en/hiking-trail/spain/costa-brava-2014-10-03/103066813/#dmdtab=oax-tab2)</p>
+
+<p>Go Kart at Karting Regencos (An Opie holiday classic. Its an outdoor track, that doesn’t require booking and has a shack bar for those not driving. Its located a couple of minutes outside of Begur by car. It’s a sharp turning off the main road, up a dirt track, but its worth it when you get there. http://kartingregencos.com/serveis-karting/</p>
+
+<p>Wine Tasting at Mas Oller (There are excellent wines all around this area and this producer will give you the tour of the vineyards and obviously a number of varieties to try – for around €17 - http://www.masoller.es/lang-en/)</p>
+
+<h4>If you are staying for a bit longer and looking slightly further a field</h4>
+<ul><li>Barcelona (Loads to see and do)</li>
+<li>Figueres (The home of the Salvador Dali museum…who once tried to buy our wedding venue with a few of his paintings)</li>
+
+
+  <img
+    id="rsvp"
+    class="pure-img sectionTitle"
+    src="rsvp.png"/>
+  <div id="whole_form">
+    <p>
+      Fill in the below for all guests...
+      </p>
+    <div
+      id="wrapper"
+      class="content">
+      <form
+        class="pure-form pure-form-stacked"
+        name="invite_form">
+        <input
+          name="name"
+          type="text"
+          value
+          placeholder="Guest Name"
+          required/>
+        <input
+          name="dietary"
+          type="text"
+          value
+          placeholder="Dietary Requirements"/>
+        <input
+          name="attending"
+          type="radio"
+          value="yes"
+          required/>
+        I'm coming - can't wait!
+
+        <br/>
+
+        <input
+          name="attending"
+          type="radio"
+          value="no"
+          required/>
+        Sorry to miss it
+      </form>
+    </div>
+  <div id='form-buttons'>
+    <input
+      id="more_fields"
+      class="pure-button"
+      type="button"
+      onclick="add_guest();"
+      value="Add another guest"/>
+    <input
+      id="fewer_fields"
+      class="pure-button"
+      type="button"
+      onclick="remove_guest();"
+      value="Remove guest"/>
+      <br>
+      <button
+        class="pure-button pure-button-primary"
+        type="submit"
+        onclick="submit_data()">
+        Submit response
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="thanks"
+    style="display: none">
+    <p>Thanks for submitting your response, looking forward to seeing ya there! :-)</p>
+  </div>
+
+  <div
+    id="whoops"
+    style="display: none">
+    Oh no, something's gone wrong - please try again later or email your response to: x@y.com
+  </div>
+
+  <div
+    id="required_ting"
+    style="visibility: hidden">
+    Sorry, please make sure you fill in a name and whether they're coming or not for each guest
+  </div>
+
+</div>
+<img
+  id="photo"
+  class="pure-img"
+  alt="Photo of Phil
+  and Alice together"
+  src="aliceandphil.jpg"/>

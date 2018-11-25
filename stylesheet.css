@@ -62,22 +62,53 @@ h1{
   max-width: 20%
 }
 
-@media(min-width: 600px){
-  #sections p {
+#stuck_photo{
+  position: fixed;
+  bottom: 0;
+  width: 60vw;
+  opacity: 0.18;
+  z-index: -100
+}
 
-    max-width: 65%;
+@media(min-width: 600px){
+  #sections p, #sections div, #sections ul{
+
+    max-width: 65%
 
   }
 
 }
 
-#sections p {
+@media(max-width: 600px){
+  input[type=text]{
+    width: 100%
+  }
+  #stuck_photo{
+    width: 100vw;
+    height: 60vh
+  }
+}
+
+#sections p, #sections div, #sections li{
 line-height: 2em;
 padding-left: 2%
 }
 
 #sections h4 {
   padding-left: 2%
+}
+
+#form-buttons * {
+  margin-right: 2%;
+  margin-bottom: 2%
+}
+
+.rsvp-section {
+  margin: 0 auto;
+}
+
+.whole_form input {
+  margin: 2%
 }
 
 .sectionTitle {
