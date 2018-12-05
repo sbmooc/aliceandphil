@@ -113,7 +113,8 @@ padding-left: 2%
 
 .sectionTitle {
   max-width: 40%;
-  min-width: 300px
+  min-width: 300px;
+  max-height: 150px
 }
 
 .border {
